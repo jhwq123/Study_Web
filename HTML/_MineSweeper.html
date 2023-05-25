@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family:'digital-clock-font';
+            src: url('../font/digital-7.ttf');
+        }
+
+        .mainBox {
+            width: 280px;
+            height: 350px;
+            padding: 10px;
+            background-color: rgb(204, 204, 204);
+            border: 6px ridge rgba(128, 128, 128, 0.3);
+            box-shadow: 5px 5px 5px#A9A9A9;
+        }
+        .scoreBox {
+            width: 96%;
+            height: 50px;
+            background-color: rgb(204, 204, 204);
+            border: 6px ridge rgba(128, 128, 128, 0.3);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+        }
+        .dial {
+            width: 60px;
+            height: 30px;
+            background-color: rgb(5, 5, 5);
+            border: 3px ridge rgba(128, 128, 128, 0.3);
+            font-family:'digital-clock-font';
+            font-size: 40px;
+            color: red;
+            position: relative;
+        }
+        .mineBox {
+            margin-left: 7px;
+            
+        }
+        
+        .dial10 {
+            left: 20px;
+        }
+        .dial1 {
+            left: 40px;
+        }
+        .setNum {
+            position: absolute;
+            top: -5px;
+        }
+        .setBg {
+            position: absolute;
+            top: -5px;
+            color: rgba(255, 0, 0, 0.3);
+
+        }
+        .smileBox {
+            width: 30px;
+            height: 30px;
+            background-color: rgb(204, 204, 204);
+            border: 3px ridge rgba(128, 128, 128, 0.3);
+            box-shadow: 5px 5px 5px#A9A9A9;
+        }
+        #smile {
+            font-size: 22px;
+        }
+        .timeBox {
+            margin-right: 7px;
+        }
+        .gameBox {
+            width: 100%;
+            height: 280px;
+            background-color: rgb(204, 204, 204);
+            border: 6px ridge rgba(128, 128, 128, 0.3);
+        }
+        .box {
+            width: 1px;
+            height: 1px;
+            background-color: rgb(204, 204, 204);
+            border: 3px ridge rgba(128, 128, 128, 0.3);
+            box-shadow: 5px 5px 5px#A9A9A9;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainBox ">
+        <div class="scoreBox">
+            <div class="mineBox dial">
+                <span class="dial100 setNum">0</span>
+                <span class="dial10 setNum">2</span>
+                <span class="dial1 setNum">0</span>
+                <span class="dial100 setNum setBg">8</span>
+                <span class="dial10 setNum setBg">8</span>
+                <span class="dial1 setNum setBg">8</span>
+            </div>
+            <div class="smileBox">
+                <span id="smile">&#128512;</span>
+            </div>
+            <div class="timeBox dial">
+                <span class="dial100 setNum">2</span>
+                <span class="dial10 setNum">8</span>
+                <span class="dial1 setNum">7</span>
+                <span class="dial100 setNum setBg">8</span>
+                <span class="dial10 setNum setBg">8</span>
+                <span class="dial1 setNum setBg">8</span>
+            </div>
+        </div>
+        <table class="gameBox">
+            <tr>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+            </tr>
+            <tr>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+            </tr>
+            <tr>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+            </tr>
+            <tr>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+            </tr>
+            <tr>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+            </tr>
+            <tr>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+            </tr>
+            <tr>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+            </tr>
+            <tr>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+            </tr>
+            <tr>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+                <td class="box"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

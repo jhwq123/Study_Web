@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container {
+            overflow: hidden;
+        }
+        div.item {
+            float: left;
+            margin: 0 3px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        /* 초기화 */
+        /* 도움되는 사이트: https://meyerweb.com/eric/tools/css/reset/ */
+        * { margin: 0; padding: 0; }
+
+        /* 주제 */
+        body {
+            margin: 0 auto;
+            width: 960px;
+        }
+        #container {
+            background-color: #8D8B96;
+            padding: 20px;
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 50% 50%;
+        }
+        .circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 50% 50%;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+        #red {
+            background-color: red;
+            top: 120px;
+            right: 40px;
+        }
+        #green {
+            background-color: green;
+            top: 120px;
+            left: 40px;
+        }
+        #blue {
+            background-color: blue;
+            top: 40px;
+            left: 120px;
+        }
+        #yellow {
+            background-color: yellow;
+            bottom: 40px;
+            left: 120px;
+        }
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        .box1 {
+            width: 50%;
+            height: 1000px;
+            background-color: red;
+            float: left;
+        }
+        .box2 {
+            width: 50%;
+            height: 1000px;
+            background-color: blue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A illum qui laudantium eveniet amet distinctio rem vero, aperiam doloribus, facilis adipisci at harum sit. Placeat dolore commodi est voluptate mollitia.</p>
+    <div class="container">
+        <div class="item">메뉴 - 1</div>
+        <div class="item">메뉴 - 1</div>
+        <div class="item">메뉴 - 1</div>
+        <div class="item">메뉴 - 1</div>
+    </div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis est eius corporis debitis nihil magnam consectetur similique ut, quaerat exercitationem eaque officiis dolor, labore quasi dolores dicta nisi architecto sint!</p>
+    <!-- div를 담아둔 container -->
+    <h1>Dummy Text</h1>
+    <div id="container">
+        <div id="red" class="circle"></div>
+        <div id="green" class="circle"></div>
+        <div id="blue" class="circle"></div>
+        <div id="yellow" class="circle"></div>
+    </div>
+    <h1>Dummy Text</h1>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

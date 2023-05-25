@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            width: 700px;
+            height: 600px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+        .red {
+            background-color: red;
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        .blue {
+            background-color: blue;
+            grid-column: 2/4;
+            grid-row: 2/5;
+        }
+        .green {
+            background-color: green;
+            grid-column: 1/4;
+            grid-row: 1/2;
+        }
+        .purple {
+            background-color: purple;
+            grid-column: 1/4;
+            grid-row: 5/6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="red">Lpisiciilpisiciilloat rene ipsum voluptatum earum neloat rene ipsum voluptatum earum neque in quos repellat illum!</div>
+        <div class="blue">Lorem, ipsum dololit.um dololit. Neque aliquem, ipsum dololit. Neque aliquem, ipsum dololit. Neque aliquid, atque accusantium quod est quisquam eum ducimus vero explicabo laborum soluta? Am dololit.um dololit. Neque aliquem, ipsum dololit. Neque aliquem, ipsum dololit. Neque aliquid, atque accusantium quod est quisquam eum ducimus vero explicabo laborum soluta? Aliquid atque alias temporibus sapiente accusliquid atque alias temporibus sapiente accusm dololit. Neque aliquem, iNeque aliquem, ipsum dololit.um dololit. Neque aliquem, ipsum dololit. Neque aliquem, ipsum dololit. Neque aliquid, atque accusantium quod est quisquam eum ducimus vero explicabo laborum soluta? Aliquid atque alias temporibus sapiente accusamus harum, commodi vel.</div>
+        <div class="green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolorum, voluptatibus impedit est placeat quibusdam laboriosam neque aperiam numquam? Dolor labore animi nesciunt exerciolor sit amet consectetur adipisicing elit. Pariatur dolorum, voluptatibus impedit est placeat quibusdam laboriosam neque aperiam numquam? Dolor labore animi nesciunt exercitationem quaerat aliqtationem quaerat aliquid quo at eum quisquam.</div>
+        <div class="purple">Lorem ipsum dolor sitm ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur autem ea fuga blanditiis consectetur, odit accusamus, commodi aliquid debitis, veniam vel dolore omnis modi rerum possimus iste, amet consectetur adipisicing elit. Consequuntur autem ea fuga blanditiis consectetur, odit accusamus, commodi aliquid debitis, veniam vel dolore omnis modi rerum possimus iste suscipit ipsam vero.</div>
+    </div>   
+</body>
+</html>

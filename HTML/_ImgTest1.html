@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            border: 2px solid pink;
+        }
+        .container {
+            position: relative;
+            margin: 40px;
+            width: 600px;
+            height: 340px;
+            padding: 5px;
+            border: 3px dotted black;
+        }
+        .t1 {
+            position: static;
+            margin: 5px;
+        }
+        .t2 {
+            position: static;
+            margin: 5px;
+            margin-left: 0px;
+        }
+        .t3 {
+            position: relative;
+            top: 110px;
+            left: 110px;
+            margin: 5px;
+        }
+        .t4 {
+            position: absolute;
+            top: 230px;
+            left: 230px;
+            margin: 5px;
+        }
+        .t5 {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="../imgs/bg/cube.jpg" class="t1" width="100px" height="100px">
+        <img src="../imgs/bg/cube.jpg" class="t2" width="100px" height="100px">
+        <img src="../imgs/bg/cube.jpg" class="t3" width="100px" height="100px">
+        <img src="../imgs/bg/cube.jpg" class="t4" width="100px" height="100px">
+        <img src="../imgs/bg/cube.jpg" class="t5" width="100px" height="100px">
+    </div>    
+</body>
+</html>

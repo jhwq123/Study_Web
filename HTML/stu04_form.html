@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stu04_Form</title>
+</head>
+<body>
+    <h1> 폼 요소들 </h1>
+    <form action = "test2.html">
+        <input type = "text" name = "txt_name" placeholder = "이름을 입력하십쇼">
+        <br><br>
+        <input type = "text" name = "txt_tel" placeholder = "전화번호을 입력하십쇼">
+        <br><br>
+        <input type = "password" placeholder = "비밀번호쓰시오">
+        <br><br>
+        <input type = "radio" name = "group" value = "A" checked> A그룹
+        <input type = "radio" name = "group" value = "B"> B그룹
+        <br><br>
+        <input type = "checkbox" name = "favorite_fruit" value = "apple">사과
+        <input type = "checkbox" name = "favorite_fruit" value = "banana">바나나
+        <input type = "checkbox" name = "favorite_fruit" value = "grape">포도
+        <input type = "reset" value="초기화">
+        <input type = "submit" value="등록">
+        <br><br>
+        <input type = "image" src="button.jpg" width="100" height="100" alt="Submit">
+    </form>
+    <hr>
+    <form action = "dance.html">
+        <input type = "text" name = "id" placeholder = "아이디를 입력하세요">
+        <br><br>
+        <input type = "password" placeholder = "비밀번호를 입력하세요">
+        <br><br>
+        <input type = "text" name = "name" placeholder = "이름을 입력하세요">
+        <br><br>
+        <span>성별</span>
+        <input type = "radio" name = "gender" value = "M" checked> 남자
+        <input type = "radio" name = "gender" value = "W" > 여자
+        <br><br>
+        <span>취미</span>
+        <input type = "checkbox" name = "habit" value = "game"> 게임하기
+        <input type = "checkbox" name = "habit" value = "walk"> 산책하기
+        <input type = "checkbox" name = "habit" value = "study"> 공부하기
+        <input type = "checkbox" name = "habit" value = "sleep"> 잠자기
+        <br><br>
+        <input type = "image" src="button.jpg" width="300" height="300" alt="Submit">
+        <br>
+        <span>[마음에 들었다면 단추의 코를 눌러주세요]</span>
+    </form>
+    <hr>
+     <!-- id, pw 입력 / link나 버튼 누르면 새로운 페이지 연결 / 
+        이미지 들어간 테이블 연결-->
+    <h1>폼 로그인 테스트</h1>
+    <form action="ex01_1.html">
+        <textarea cols="20", rows="10" name="txts"></textarea>
+        <select name="option" multiple>
+            <optgroup label="html5">
+                <option>JAVA</option>
+                <option>JSP</option>
+                <option selected>HTML5</option>
+                <option>jQuery</option>
+            </optgroup>
+            <optgroup label="웹 표준">
+                <option>구조</option>
+                <option>동작</option>
+                <option>표현</option>
+            </optgroup>
+            
+        </select>
+        id : <input type="text", name="id", placeholder="id를 입력하세요">
+        <br/><br/>
+        pw : <input type="password", name="pw", placeholder="pw를 입력하세요">
+        <br/><br/>
+        <input type="submit", value="GO" />
+        <input type="button", value="test" onclick="alert('helloworld')"/>
+        <button type="submit">button</button>
+    </form>
+    <hr>
+    <form action="resisted.html">
+        아이디 : <input type="text" name="id" placeholder="id" value="aaa" readonly><br/>
+        패스워드 : <input type="password" name="pw" placeholder="pw" required><br/>
+        패스워드확인 : <input type="password" placeholder="re-pw" required><br/>
+        이름 : <input type="text" name="name" placeholder="name" required><br/>
+        성별 :
+        <input type="radio" name="gender" checked> 남자
+        <input type="radio" name="gender"> 여자
+        <br/>
+        연락처 : 
+        <select name="tel">
+            <option selected>010</option>
+            <option>011</option>
+            <option>019</option>
+        </select>
+        <input type="text" name="phone" placeholder="phone" required>
+        <br/>
+        취미 : 
+        <input type="checkbox" name="hobbies" value="coding"> 코딩
+        <input type="checkbox" name="hobbies" value="reading"> 독서
+        <input type="checkbox" name="hobbies" value="moving"> 영화보기
+        <br/>
+        자기소개 :
+        <textarea cols="20" rows="2" name="txts"></textarea><br/>
+        <input type="submit" value="등록">
+        <input type="reset" value="초기화">
+    </form>
+</body>
+</html>

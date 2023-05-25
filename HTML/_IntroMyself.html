@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>저를 소개 해볼 거 에요</title>
+    <style>
+        body {
+            background: linear-gradient(
+                217deg,
+                rgba(255, 0, 0, 0.8),
+                rgba(255, 0, 0, 0) 70.71%
+                ), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+                linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+            background-image: url("../imgs/bnobno.png"), url("../imgs/bg.png");
+            background-size: 120% 800px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 0px 20%;
+        }
+        header {
+            text-align: center;
+            margin-left: 200px;
+            margin-top: 100px;
+        }
+        .headLine {
+            float: left;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        main {
+            padding-top: 50px;
+            clear: both;
+            width: 300px;
+            height: 400px;
+        }
+        h2 {
+            color: white;
+            text-align: center;
+        }
+        h3 {
+            position: absolute;
+            top: 500px;
+            left: 350px;
+            width: 65px;
+            color: white;
+            text-align: center;
+        }
+        @font-face {
+            font-family:'digital-clock-font';
+            src: url('../font/digital-7.ttf');
+        }
+
+        .mainBox {
+            width: 280px;
+            height: 350px;
+            padding: 10px;
+            background-color: rgb(204, 204, 204);
+            border: 6px ridge rgba(128, 128, 128, 0.3);
+            box-shadow: 5px 5px 5px#A9A9A9;
+        }
+        .scoreBox {
+            width: 96%;
+            height: 50px;
+            background-color: rgb(204, 204, 204);
+            border: 6px ridge rgba(128, 128, 128, 0.3);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+        }
+        .dial {
+            width: 60px;
+            height: 30px;
+            background-color: rgb(5, 5, 5);
+            border: 3px ridge rgba(128, 128, 128, 0.3);
+            font-family:'digital-clock-font';
+            font-size: 40px;
+            color: red;
+            position: relative;
+        }
+        .mineBox {
+            margin-left: 7px;
+            
+        }
+        
+        .dial10 {
+            left: 20px;
+        }
+        .dial1 {
+            left: 40px;
+        }
+        .setNum {
+            position: absolute;
+            top: -5px;
+        }
+        .setBg {
+            position: absolute;
+            top: -5px;
+            color: rgba(255, 0, 0, 0.3);
+
+        }
+        .smileBox {
+            width: 30px;
+            height: 30px;
+            background-color: rgb(204, 204, 204);
+            border: 3px ridge rgba(128, 128, 128, 0.3);
+            box-shadow: 5px 5px 5px#A9A9A9;
+        }
+        #smile {
+            font-size: 22px;
+        }
+        .timeBox {
+            margin-right: 7px;
+        }
+        .gameBox {
+            width: 100%;
+            height: 280px;
+            background-color: rgb(204, 204, 204);
+            border: 6px ridge rgba(128, 128, 128, 0.3);
+        }
+        .box {
+            width: 1px;
+            height: 1px;
+            background-color: rgb(204, 204, 204);
+            border: 3px ridge rgba(128, 128, 128, 0.3);
+            box-shadow: 5px 5px 5px#A9A9A9;
+            cursor: pointer;
+        }
+        .box:hover {
+            background-image: url("../imgs/cat.gif");
+            background-size: 30px;
+
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            position: absolute;
+            background-color: gold;
+        }
+        #jam {
+            position: absolute;
+            width: 200px;
+            top: 450px;
+            left: 380px;
+
+        }
+        #tkjam {
+            position: absolute;
+            width: 150px;
+            top:40px;
+            left:20px;
+        }
+        #link2 {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top:555px;
+            left:427px;
+            border-radius: 5px;
+        }
+        #link3 {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top:260px;
+            left:765px;
+            border-radius: 40px;
+        }
+        #link4 {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            top:318px;
+            left:281px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg">
+        <img src="../imgs/tkjam.png" id="tkjam"/>
+    </div>
+    <header>
+        <img src="../imgs/moco1.png" class="headLine"/>
+        <h1 class="headLine">저를 소개 해 보겟습니다</h1>
+        <img src="../imgs/moco2.png" class="headLine"/>
+    </header>
+    <main>
+        <h2>저는 이걸 만들 거 에오&#129035;</h2>
+        <div class="mainBox ">
+            <div class="scoreBox">
+                <div class="mineBox dial">
+                    <span class="dial100 setNum">0</span>
+                    <span class="dial10 setNum">2</span>
+                    <span class="dial1 setNum">0</span>
+                    <span class="dial100 setNum setBg">8</span>
+                    <span class="dial10 setNum setBg">8</span>
+                    <span class="dial1 setNum setBg">8</span>
+                </div>
+                <div class="smileBox">
+                    <span id="smile">
+                        <a href="https://jhwq123.github.io/aVeryPersonalReview/">&#128512;</a>
+                    </span>
+                </div>
+                <div class="timeBox dial">
+                    <span class="dial100 setNum">2</span>
+                    <span class="dial10 setNum">8</span>
+                    <span class="dial1 setNum">7</span>
+                    <span class="dial100 setNum setBg">8</span>
+                    <span class="dial10 setNum setBg">8</span>
+                    <span class="dial1 setNum setBg">8</span>
+                </div>
+            </div>
+            <table class="gameBox">
+                <tr>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                </tr>
+                <tr>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                </tr>
+                <tr>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                </tr>
+                <tr>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                </tr>
+                <tr>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                </tr>
+                <tr>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                </tr>
+                <tr>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                </tr>
+                <tr>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                </tr>
+                <tr>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                    <td class="box"></td>
+                </tr>
+            </table>
+        </div>
+        <h3>우아 정말 대다나다</h3>
+        <img src="../imgs/zzjam.png" id="jam"/>
+        <a href="https://jhwq123.github.io/jhwq123Clone1.github.io/" id="link2"></a>
+        <a href="https://jhwq123.github.io/jhwq123Clone2.github.io/" id="link3"></a>
+        <a href="https://jhwq123.github.io/react-challenges/" id="link4"></a>
+    </main>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stu03_Table</title>
+</head>
+<body>
+    <h1> 테이블 만들기 </h1>
+    <hr>
+    <table border='1'> <!-- 행과 열 -->
+        <thead style = "background-color: gray; color: white">
+            <tr>
+                <th>책제목</th>
+                <th>지은이</th>
+                <th>출판사</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>입 속의 검은 잎</td>
+                <td>기형도</td>
+                <td>문학과 지성자</td>
+            </tr>
+            <tr>
+                <td>서른, 잔치는 끝났다</td>
+                <td>최영미</td>
+                <td>창작과 비평사</td>
+            </tr>
+            <tr>
+                <td>은어낚시통신</td>
+                <td>윤대녕</td>
+                <td>문학동네</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table border='1'>
+        <tr>
+            <td>1행 1열</td>
+            <td>1행 2열</td>
+            <td>1행 3열</td>
+        </tr>
+        <tr>
+            <td colspan="3">2행 1열</td>
+        </tr>
+    </table>
+    <hr>
+    <table border='1'>
+        <tr>
+            <td rowspan = "2" style = "background-color: red">1행 1열</td>
+            <td style = "background-color: yellow">1행 2열</td>
+            <td style = "background-color: purple">1행 3열</td>
+        </tr>
+        <tr>
+            <td colspan = "2" style = "background-color: green">2행 1열</td>
+        </tr>
+        <tr>
+            <td colspan = "2" style = "background-color: orange">3행 1열</td>
+            <td style = "background-color: blue">3행 2열</td>
+        </tr>
+    </table>
+    <hr>
+    <table border='1'>
+        <tr>
+            <td colspan = "4">지상파 방송국</td>
+        </tr>
+        <tr>
+            <td rowspan = "2">채널</td>
+            <td>MBC</td>
+            <td>KBS</td>
+            <td>SBS</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>9</td>
+            <td>5</td>
+        </tr>
+    </table>
+    <hr>
+    <table width = "600", heoght = "400" border = '1'>
+        <tr>
+            <td><img src = "../imgs/모코코콘_고화질/01_개추_coconut.gif"></td>
+            <td><img src = "../imgs/모코코콘_고화질/01_개추_coconut.gif"></td>
+            <td><img src = "../imgs/모코코콘_고화질/01_개추_coconut.gif"></td>
+        </tr>
+        <tr>
+            <td><img src = "../imgs/모코코콘_고화질/01_개추_coconut.gif"></td>
+            <td><img src = "../imgs/모코코콘_고화질/01_개추_coconut.gif"></td>
+            <td><img src = "../imgs/모코코콘_고화질/01_개추_coconut.gif"></td>
+        </tr>
+        <tr>
+            <td><img src = "../imgs/모코코콘_고화질/01_개추_coconut.gif"></td>
+            <td><img src = "../imgs/모코코콘_고화질/01_개추_coconut.gif"></td>
+            <td><img src = "../imgs/모코코콘_고화질/01_개추_coconut.gif"></td>
+        </tr>
+    </table>
+</body>
+</html>
