@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 추가 웹페이지 정보 meta -->
+    <meta name="title" contemt="mediaQuery 공부 페이지">
+    <meta name="description" content="meta 태그의 title 속성과 description 속성입니다.">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>Media Feature</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #menu {
+            width: 260px;
+            float: right;
+        }
+        #section {
+            width: 700px;
+            float: left;
+        }
+        /* 스마트폰 */
+        @media screen and (max-width: 767px) {
+            body { 
+                background-color: red; 
+                width: auto
+            }
+            #menu {
+                width: auto;
+                float: none;
+            }
+            #sector {
+                width: auto;
+                float: none;
+            }
+        }
+        /* 태블릿PC 세로 */
+        @media screen and (min-width: 768px) and (max-width: 959px) {
+            body { background-color: green; }
+        }
+
+        /* 데스크톱 */
+        @media screen and (min-width: 960px) {
+            body { background-color: blue; }
+        }
+    </style>
+</head>
+<body>
+    <div id = "menu">
+        <ul>
+            <li>메뉴A</li>
+            <li>메뉴B</li>
+            <li>메뉴C</li>
+        </ul>
+    </div>
+    <div id="section">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum molestias reiciendis obcaecati quo, placeat vel tempora repellat quas laboriosam ab architecto dolorem nemo exercitationem sequi cum quos corporis, soluta ipsum?</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur omnis quos deserunt nisi quo excepturi sapiente quod vel iure impedit? Quia obcaecati labore quidem error incidunt ipsam quisquam, hic nostrum.</p>
+    </div>
+</body>
+</html>
