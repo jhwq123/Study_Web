@@ -4,21 +4,180 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS-normal</title>
+    <title>DOM Basic</title>
     <style>
         body {
-            background-color: gainsboro;
+            width: 100px;
+        }
+        img {
+            width: 500px;
+            height: 500px;
+        }
+        .boxImage {
+            width: 100px;
+            height: 100px;
+        }
+        #imageBox {
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
         }
     </style>
+    
 </head>
 <body>
-    <h1 id="title">title</h1>
+    <!-- <h1 id="title">title</h1>
+    <h2>goooood</h2>
+    <h3 class="gold">silver</h3>
+    <h4>query</h4>
+    <h4>select</h4>
+    <h4>aaalll</h4> -->
+
+    <!-- <h1>header</h1>
+    <h1>header</h1>
+    <h1>header</h1>  -->
+
+    <!-- <img id = "image"> -->
+
+    <!-- <h1 id="clock">clock</h1> -->
+
+    <!-- inline형 버튼 event -->
+    <!-- <button onclick="alert('click')">버튼</button> -->
+
+    <!-- js호출형 버튼 event -->
+    <!-- <button onclick="buttonClick()">버튼</button> -->
+
+    <!-- js에서 직접 호출버튼 생성 -->
+    <!-- <button id="button">버튼</button> -->
+
+    <!-- <a id="button" href="http://naver.com">버튼</a> -->
+
+    <input id = "input" type="text" placeholder="1~3 select">
+    <button id = "btn">실행</button>
+    <img src="../img/hanbit/hanbit.jpg"><br>
+    <div id = "imageBox">
+
+    </div>
 </body>
-<script>
-    // id가 title인 뇨속을 추적해 style및 text를 변경하였습니다.
-    var title = document.getElementById('title');
-    title.style.color = 'orange';
-    title.style.background = 'red';
-    title.innerHTML = 'Good Jobs';
+<script> 
+    // id가 title인 값 추적
+    // var title = document.getElementById('title');
+    // query가 h2인 값 추적
+    // var h2 = document.querySelector('h2');
+    // class가 gold인 값 추적
+    // var gold = document.getElementsByClassName('gold');
+    // query의 전체 값들 추적
+    // var h4 = document.querySelectorAll('h4');
+    
+    // title.style.color = 'orange';
+    // title.style.background = 'red';
+    // title.innerHTML = 'Good Jobs';
+
+    // h2.style.color = 'white';
+    // h2.style.background = 'gray';
+    // h2.innerHTML = 'For Everything';
+
+    // gold.style.color = 'gold';
+    // gold.style.background = 'yellow';
+    // gold.innerHTML = 'Beautiful';
+
+    // h4.style.color = 'blue';
+
+    /* 
+    window.onload = function () {
+        var output = '';
+        for (var i = 0; i < 10; i++) {
+            output += '<h1>Header - ' + i + '</h1>';
+        }
+
+        // 문서 객체 내부 글자 변경
+        // document.body.textContent = output;
+        document.body.innerHTML = output;
+    }
+    */
+
+    // selectAll 했을 때, 배열로 원하는 요소를 가져올 수 있다.
+    // document.querySelectorAll('h1')[2].innerHTML = '<span>hello</span>';
+    // document.querySelector('span').style.color = 'red';
+
+    // window.onload = function() {
+    //     var output = '';
+    //     for(var i = 0; i < 256; i++) {
+    //         output += '<div></div>';
+    //     }
+    //     document.body.innerHTML = output;
+
+    //     var divs = document.querySelectorAll('div');
+        
+    //     for (var i = 0; i < divs.length; i++) {
+    //         var div = divs[i];
+    //         div.style.height = '3px';
+    //         div.style.background = 'rgb(' + i + ',' + i + ',' + i + ')';
+    //     }
+    // }
+
+    // window.onload = function () {
+    //     var image = document.getElementById('image');
+
+    //     image.src = '../img/logo/naver.png';
+    //     image.width = 300;
+    //     image.height = 300;
+    // }
+
+    // window.onload = function () {
+    //     document.body.setAttribute('data-custom', 'hi');
+    //     var dataCustom = document.body.getAttribute('data-custom');
+    //     alert(dataCustom);
+    // }
+
+    // window.onload = function () {
+    //     var clock = document.getElementById('clock');
+    //     setInterval(function () {
+    //         var now = new Date();
+    //         clock.innerHTML = now.toString();
+    //     }, 1000);
+    // };
+
+    // function buttonClick() {
+    //     alert('click');
+    // }
+
+    // js에서 버튼에 직접 eventListener를 추가
+    // window.onload = function () {
+    //     var button = document.getElementById('button');
+    //     button.onclick = function () {
+    //         alert('click');
+    //     }
+    // }
+
+    // window.onload = function () {
+    //     var button = document.getElementById('button');
+
+    //     button.onclick = function () {
+    //         return false;
+    //     };
+    // };
+
+    var image = document.querySelector('img');
+    var button = document.getElementById('btn');
+    var input = document.getElementById('input');
+    var box = document.getElementById('imageBox');
+    button.onclick = function () {
+        if (input.value == 1) {
+            image.src = '../img/meme/kermit1.gif';
+        } else if (input.value == 2) {
+            image.src = '../img/meme/kermit2.gif';
+        } else if (input.value == 3) {
+            image.src = '../img/meme/kermit3.gif';
+        } else if (input.value == 4) {
+            image.src = '../img/meme/kermit4.gif';
+        } else if (input.value == 5) {
+            image.src = '../img/meme/kermit5.gif';
+        }
+        box.innerHTML += '<img src="../img/meme/kermit'+input.value+'.gif" class="boxImage">'
+        return false;
+    }
+
 </script>
 </html>
