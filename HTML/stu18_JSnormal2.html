@@ -12,9 +12,13 @@
     </style>
 </head>
 <body>
-    <h1>title</h1>
+    <h1 id="title">title</h1>
 </body>
 <script>
-    alert("확인확인");
+    // id가 title인 뇨속을 추적해 style및 text를 변경하였습니다.
+    var title = document.getElementById('title');
+    title.style.color = 'orange';
+    title.style.background = 'red';
+    title.innerHTML = 'Good Jobs';
 </script>
 </html>
