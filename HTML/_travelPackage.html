@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Bear Brother!</title>
+</head>
+<body>
+    <header>
+        <h1>위험천만한 야생에 던져졌을 때 필요한 물건들</h1>
+        <img src="../img/meme/bear.jpg" />
+    </header>
+    <main>
+        <form>
+            <input type="text" placeholder="여기 입력하시오." id="pack" required>
+            <input type="submit" value="넣기" id="submit">
+        </form>
+        <ul>
+        </ul>
+    </main>
+    <script>
+        const pack = document.getElementById('pack');
+        const btn = document.getElementById('submit');
+
+        btn.addEventListener('click', addPack);
+    
+        function addPack(event) {
+            event.preventDefault();
+            var item = document.createElement('li');
+            item.innerHTML = pack.value;
+            document.querySelector('ul').append(item);
+        }
+    </script>
+</body>
+</html>

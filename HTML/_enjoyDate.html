@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #title {
+            border: 1px solid black;
+            width: 200px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        input {
+            width: 50px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="title">
+        <h4>우리 만난지</h4>
+        <h2><input type="text" required>일</h2>
+        <div id="bar">기념일을 계산</div>
+        <div id="100d">100일</div>
+        <div id="200d">200일</div>
+        <div id="1y">1년</div>
+        <div id="500d">500일</div>
+    </div>
+</body>
+<script>
+    var btn = document.querySelector('#title');
+    var date = document.querySelector('input');
+    var d100 = document.getElementById('100d');
+    var d200 = document.getElementById('200d');
+    var y1 = document.getElementById('1y');
+    var d500 = document.getElementById('500d');
+
+    btn.addEventListener('change', result)
+
+    function result(event) {
+        if(date.value !== '') {
+            var day = date.value;
+            var now = Date.now() - (1000 * 60 * 60 * 24 * day);
+            var day100 = new Date(now + (1000 * 60 * 60 * 24 * 100));
+            var day200 = new Date(now + (1000 * 60 * 60 * 24 * 200));
+            var year1 = new Date(now + (1000 * 60 * 60 * 24 * 365));
+            var day500 = new Date(now + (1000 * 60 * 60 * 24 * 500));
+            
+            d100.innerHTML = day100.getFullYear() + '년 ' + (day100.getMonth()+1) + '월 ' + day100.getDate() + '일';
+            d200.innerHTML = day200.getFullYear() + '년 ' + (day200.getMonth()+1) + '월 ' + day200.getDate() + '일';
+            y1.innerHTML = year1.getFullYear() + '년 ' + (year1.getMonth()+1) + '월 ' + year1.getDate() + '일';
+            d500.innerHTML = day500.getFullYear() + '년 ' + (day500.getMonth()+1) + '월 ' + day500.getDate() + '일';
+        }
+    }
+
+</script>
+</html>

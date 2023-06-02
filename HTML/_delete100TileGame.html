@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색종이100개 빨리맞추기</title>
+    <style>
+        @font-face {
+            font-family:'digital-clock-font';
+            src: url('../font/digital-7.ttf');
+        }
+        body {
+            background-image: url('../img/bg/universe2.jpg');
+            background-size: cover;
+            position: relative;
+            padding: 0;
+            margin: 0;
+        }
+        #gameBox {
+            background-image: url('../img/bg/universe.jpg');
+            background-size: cover;
+            width: 800px;
+            height: 800px;
+            border: 5px solid black;
+        }
+        .box {
+            position: absolute;
+            border: 2px solid black;
+            font-size: 30px;
+            align-items: center;
+        }
+        #scoreBox {
+            border: 5px solid black;
+            width: 740px;
+            height: 180px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            margin-top: 40px;
+            padding: 0px 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #idx, #timer {
+            border: 3px solid white;
+            width: 300px;
+            height: 100px;
+            text-align: center;
+            font-size: 30px;
+            margin-top: 40px;
+        }
+        input {
+            width: 270px;
+            height: 50px;
+            background-color: black;
+            color: red;
+            font-size: 50px;
+            text-align: right;
+            font-family:'digital-clock-font';
+        }
+    </style>
+</head>
+<body>
+    <div id="gameBox"></div>
+    <div id="scoreBox">
+        <div id="idx"></div>
+        <div id="timer">
+            <input type="text" value="0" id="timeB" readonly>
+        </div>
+    </div>
+</body>
+<script>
+
+    var gameBox = document.getElementById('gameBox');
+    var idxCnt = document.getElementById('idx');
+    var timeB = document.getElementById('timeB');
+    var idx = 100;
+    var time = 0;
+    var count = 0;
+    idxCnt.innerHTML = '[ IDX: '+idx+']';
+
+    for(var i = 1; i < 101; i++) {
+        var box = document.createElement('div');
+        var bl_x = parseInt(Math.random()*500);
+        var bl_y = parseInt(Math.random()*500);
+        var bl_s = parseInt((Math.random()*200)+200);
+        var bl_R = parseInt(Math.random()*255);
+        var bl_G = parseInt(Math.random()*255);
+        var bl_B = parseInt(Math.random()*255);
+        box.setAttribute('id', `box${i}`);
+        box.setAttribute('class', 'box');
+        box.setAttribute('style', `top: ${bl_x}px; left: ${bl_y}px; width: ${bl_s}px; height: ${bl_s}px; background-color: rgb(${bl_R},${bl_G},${bl_B}); z-index: ${i}`);
+        box.innerHTML = i;
+        document.querySelector('#gameBox').appendChild(box);
+    }
+
+    gameBox.addEventListener('click', selBox);
+    
+    function selBox(event) {
+        if(this.id !== event.target.id) {
+            if(event.target.textContent != idx) return;
+            event.target.remove();
+            idx--;
+            idxCnt.innerHTML = '[ IDX: '+idx+']';
+            timeStart();
+        }
+    }
+
+    function timeStart() {
+        clearInterval(time);
+        time = setInterval("run()", 10);
+        if(idx <= 0) {
+            clearInterval(time);
+        }
+    }
+
+    function run() {
+        count++;
+        timeB.value = count;
+    }
+
+</script>
+</html>

@@ -7,34 +7,209 @@
     <title>Document</title>
     <style>
         /*  */
+        body {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            width: 400px;
+            height: 625px;
+            box-shadow: 10px 10px 10px rgb(0, 0, 0);
+        }
+        #eventBox1 {
+            position: absolute;
+            background-color: none;
+            top: 367px;
+            width: 300px;
+            height: 270px;
+            z-index: -1;
+        }
+        #eventBox2 {
+            position: absolute;
+            background-color: none;
+            top: 233px;
+            width: 400px;
+            height: 405px;
+            z-index: -2;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 40px;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 40px;
+            align-items: center;
+            padding: 0px 5px;
+            
+        }
+        .svg {
+            fill: rgb(255, 255, 255);
+            width: 50px;
+            height: 35px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .svg:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .svg:nth-child(4) {
+            margin-left: 180px;
+        }
+        #viewBox {
+            background-color: rgba(0, 0, 0, 0.8);
+            height: 150px;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: end;
+            padding: 0px 20px;
+        }
+        input {
+            background-color: rgba(0, 0, 0, 0.8);
+            border: none;
+            width: 99%;
+            height: 100px;
+            text-align: right;
+            font-size: 50px;
+            font-weight: 600;
+            color: white;
+        }
+        #menuBox {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .btn1 {
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 5px;
+            margin: 2px;
+            cursor: pointer
+        }
+        .btn1:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        #calcBox {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            height: 400px;
+        }
+        .btn2 {
+            width: 95%;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.1);
+            text-align: center;
+            line-height: 55px;
+            border-radius: 5px;
+            margin: 2px;
+            font-size: 20px;
+            fill: rgb(255, 255, 255);
+            cursor: pointer
+        }
+        .btn2:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .btnErase {
+            line-height: 65px;
+        }
+        .btnDiv {
+            font-size: 35px;
+            line-height: 55px;
+        }
+        .btnMin {
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .btnPls {
+            font-size: 35px;
+        }
+        .btnD {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .btnD:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .btnResult {
+            background-color: #00bcf0d5;
+            color: black;
+            font-size: 30px;
+            line-height: 55px;
+        }
+        .btnResult:hover {
+            background-color: #00bcf0b0;
+        }
 
     </style>
 </head>
 <body>
     <!--  -->
     <header>
-        <div>menu</div>
+        <div class="svg">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+        </div>
         <div>표준</div>
-        <div>icon1</div>
-        <div>icon2</div>
+        <div class="svg">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H288V352c0-17.7 14.3-32 32-32h80V96c0-8.8-7.2-16-16-16H64zM288 480H64c-35.3 0-64-28.7-64-64V96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V320v5.5c0 17-6.7 33.3-18.7 45.3l-90.5 90.5c-12 12-28.3 18.7-45.3 18.7H288z"/></svg>
+        </div>
+        <div class="svg">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>
+        </div> 
     </header>
     <main>
+        <div id="eventBox1"></div>
+        <div id="eventBox2"></div>
         <div id="viewBox">
-
+            <input type="text" value="0" disabled >
+        </div>
+        <div id="menuBox">
+            <div class="btn1 btnMC">MC</div>
+            <div class="btn1 btnMR">MR</div>
+            <div class="btn1 btnMpls">M+</div>
+            <div class="btn1 btnMmin">M-</div>
+            <div class="btn1 btnMS">MS</div>
+            <div class="btn1 btnMlist">M∇</div>
         </div>
         <div id="calcBox">
-            <button class="btn1 btnMC">MC</button>
-            <button class="btn1 btnMR">MR</button>
-            <button class="btn1 btnMpls">M+</button>
-            <button class="btn1 btnMmin">M-</button>
-            <button class="btn1 btnMS">MS</button>
-            <button class="btn1 btnMlist">M∇</button>
-            <button class="btn2 btnPerse">%</button>
-            <button class="btn2 btnCE">CE</button>
-            <button class="btn2 btnC">C</button>
-            <button class="btn2 btnErase"><i class="fa-regular fa-broom-wide"></i></button>
-            <button></button>
-            <button></button>
+            <div class="btn2 btnPerse">%</div>
+            <div class="btn2 btnCE">CE</div>
+            <div class="btn2 btnC">C</div>
+            <div class="btn2 btnErase">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M576 128c0-35.3-28.7-64-64-64H205.3c-17 0-33.3 6.7-45.3 18.7L9.4 233.4c-6 6-9.4 14.1-9.4 22.6s3.4 16.6 9.4 22.6L160 429.3c12 12 28.3 18.7 45.3 18.7H512c35.3 0 64-28.7 64-64V128zM271 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+            </div>
+            
+            <div class="btn2 btnFountain">1/x</div>
+            <div class="btn2 btnSqr">&#120;&#178;</div>
+            <div class="btn2 btnRoot">&#8730;2</div>
+            <div class="btn2 btnDiv">&#247;</div>
+            
+            <div class="btn2 btnD btn07">7</div>
+            <div class="btn2 btnD btn08">8</div>
+            <div class="btn2 btnD btn09">9</div>
+            <div class="btn2 btnMul">&#10005;</div>
+
+            <div class="btn2 btnD btn04">4</div>
+            <div class="btn2 btnD btn05">5</div>
+            <div class="btn2 btnD btn06">6</div>
+            <div class="btn2 btnMin">&#8722;</div>
+
+            <div class="btn2 btnD btn01">1</div>
+            <div class="btn2 btnD btn02">2</div>
+            <div class="btn2 btnD btn03">3</div>
+            <div class="btn2 btnPls">&#43;</div>
+
+            <div class="btn2 btnD btnPlsMin">+/-</div>
+            <div class="btn2 btnD btn00">0</div>
+            <div class="btn2 btnD btnDot">.</div>
+            <div class="btn2 btnResult">=</div>
         </div>
     </main>
     <footer>
@@ -43,6 +218,116 @@
 </body>
 <script>
     // 
+    var eTrig1 = document.querySelector('eventBox1');
+    var eTrig2 = document.querySelector('eventBox2');
+
+    var input = document.querySelector('input');
+
+    var btn0 = document.querySelector('.btn00');
+    var btn1 = document.querySelector('.btn01');
+    var btn2 = document.querySelector('.btn02');
+    var btn3 = document.querySelector('.btn03');
+    var btn4 = document.querySelector('.btn04');
+    var btn5 = document.querySelector('.btn05');
+    var btn6 = document.querySelector('.btn06');
+    var btn7 = document.querySelector('.btn07');
+    var btn8 = document.querySelector('.btn08');
+    var btn9 = document.querySelector('.btn09');
+
+    var btnPls = document.querySelector('.btnPls');
+    var btnMin = document.querySelector('.btnMin');
+    var btnMul = document.querySelector('.btnMul');
+    var btnDiv = document.querySelector('.btnDiv');
+    
+    var btnCE = document.querySelector('.btnCE');
+    var btnC = document.querySelector('.btnC');
+    var btnErase = document.querySelector('.btnErase');
+    var btnResult = document.querySelector('.btnResult');
+
+    var btnFountain = document.querySelector('.btnFountain');
+
+    btn0.addEventListener('click', dial);
+    btn1.addEventListener('click', dial);
+    btn2.addEventListener('click', dial);
+    btn3.addEventListener('click', dial);
+    btn4.addEventListener('click', dial);
+    btn5.addEventListener('click', dial);
+    btn6.addEventListener('click', dial);
+    btn7.addEventListener('click', dial);
+    btn8.addEventListener('click', dial);
+    btn9.addEventListener('click', dial);
+
+    btnPls.addEventListener('click', calc);
+    btnMin.addEventListener('click', calc);
+    btnMul.addEventListener('click', calc);
+    btnDiv.addEventListener('click', calc);
+
+    btnCE.addEventListener('click', reset);
+    btnC.addEventListener('click', reset);
+    btnErase.addEventListener('click', del);
+    btnResult.addEventListener('click', sol);
+    
+    btnFountain.addEventListener('click', fourtain);
+
+
+    function dial(event) {
+        if(input.value == '0') {
+            input.value = '';
+        }
+        input.value += this.innerHTML;
+    }
+
+    function calc(event) {
+        var temp = input.value;
+        var flag = temp.substring(temp.length-1, temp.length);
+        if(flag%1 == '0') {
+            if(this.innerHTML == '+') {
+                input.value += ' + ';
+            } else if (this.innerHTML == '−') {
+                input.value += ' - ';
+            } else if (this.innerHTML == '✕') {
+                input.value += ' * ';
+            } else if (this.innerHTML == '÷') {
+                input.value += ' / ';
+            }
+        }
+    }
+
+    function reset(event) {
+        input.value = '0';
+    }
+
+    function del(event) {
+        if (input.value.length === 0) {
+            input.value = '0';
+            return
+        }
+        var tempDel = input.value;
+        tempDel = tempDel.substring(0, tempDel.length-1);
+        input.value = tempDel;
+        if (input.value.length === 0) {
+            input.value = '0';
+            return
+        }
+    }
+
+    function sol(event) {
+        var str = input.value.split(" ");
+        var exp = str[1];
+        if (exp == '+') {
+            input.value = parseInt(str[0]) + parseInt(str[2]);
+        } else if (exp == '-') {
+            input.value = parseInt(str[0]) - parseInt(str[2]);
+        } else if (exp == '*') {
+            input.value = parseInt(str[0]) * parseInt(str[2]);
+        } else if (exp == '/') {
+            input.value = parseInt(str[0]) / parseInt(str[2]);
+        }
+    }
+
+    function fourtain(event) {
+        input.value = 1 / parseInt(input.value);
+    }
 
 </script>
 </html>

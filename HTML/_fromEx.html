@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 250px;
+            height: 150px;
+        }
+        span {
+            display: inline-block;
+            width: 50px;
+        }
+        table {
+            width: 600px;
+            text-align: left;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th{
+            background-color: rgb(109, 119, 255);
+            color: white;
+            border: 1px solid black;
+        }
+        td {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+        button, #submit {
+            width: 70px;
+            background-color: rgb(109, 119, 255);
+            color: white;
+            border: 2px solid black;
+            border-radius: 7px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <span>번호</span>
+            <input type="text", placeholder="번호 입력..." id ="number" required>
+        </div>
+        <div>
+            <span>이름</span>
+            <input type="text", placeholder="이름 입력..." id ="name" required>
+        </div>
+        <div>
+            <span>연락처</span>
+            <input type="text", placeholder="연락처 입력..." id ="phone" required>
+        </div>
+        <input type="submit" value="등록" id ="submit">
+    </form>
+    <br><br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>연락처</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        var number = document.getElementById('number');
+        var nameT = document.getElementById('name');
+        var phone = document.getElementById('phone');
+        var btn = document.getElementById('submit');
+        var tbody = document.querySelector('tbody');
+
+        btn.addEventListener('click', addTable);
+        tbody.addEventListener('click', delTable);
+        
+        function addTable(event) {
+            event.preventDefault();
+            if(checkSpace(number.value) && checkSpace(nameT.value) && checkSpace(phone.value)) {
+                var tr = document.createElement("tr");
+                tr.innerHTML = `<td>${number.value}</td><td>${nameT.value}</td><td>${phone.value}</td><td><button id="delete">삭제</button></td>`
+                document.querySelector('tbody').append(tr);
+                var del = document.querySelector('#delete');
+                return;
+            }
+            alert('공백을 빼주세요');
+        }
+
+        function delTable(event) {
+            var value = event.target;
+            if(value.id === 'delete') {
+                value.parentElement.parentElement.remove();
+            }
+        }
+
+        function checkSpace(string) {
+            var temp = string + '';
+            console.log(temp);
+            if (temp != '') {
+                for(var i = 0; i < temp.length; i++) {
+                    var c = temp.substr(i,1);
+                    if(c == ' ') {
+                        return 0;
+                    }
+                }
+                return 1;
+            }
+            return 0;
+        }
+    </script>
+</body>
+</html>

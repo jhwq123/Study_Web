@@ -32,17 +32,21 @@
             height: 50px;
             position: absolute;
             background-color: white;
+            top: 0;
             display: flex;
             font-size: 30px;
             text-align: center;
             font-weight: 600;
             opacity: 0.7;
         }
+        h1 {
+            margin-top: 50px;
+        }
         svg {
             width: 50px;
         }
         nav {
-            
+            display: flex
         }
         footer {
 
@@ -60,6 +64,9 @@
         ul:nth-child(3) {
             background-color: #f0d43a;
         }
+        ul:nth-child(4) {
+            background-color: #feffdf;
+        }
         li {
             margin: 10px;
         }
@@ -74,15 +81,17 @@
         <div>정리</div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"/></svg>
         <div>사이트</div>
+        <nav>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+        </nav>
     </header>
-    <nav>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JS</span>
-    </nav>
+    
     <h1>Chrome F12 개발자 모드로 확인하세요</h1>
     <main>
         <ul>
+            <h2 id="html">HTML</h2>
             <li>
                 <a href="html/stu01_text.html">html_Text</a>
             </li>
@@ -100,6 +109,7 @@
             </li>
         </ul>
         <ul>
+            <h2 id="css">CSS</h2>
             <li>
                 <a href="HTML/stu06_CSScontainDiv.html">CSS_containDiv</a>
             </li>
@@ -135,11 +145,24 @@
             </li>
         </ul>
         <ul>
+            <h2 id="js">JavaScript</h2>
             <li>
                 <a href="HTML/stu17_JSnormal.html">JS_normal</a>
             </li>
             <li>
                 <a href="HTML/stu18_JSnormal2.html">JS_normal2</a>
+            </li>
+        </ul>
+        <ul>
+            <h2>Micro Project</h2>
+            <li>
+                <a href="HTML/_AirCondition.html">AirCondition</a>
+            </li>
+            <li>
+                <a href="HTML/_Button.html">Button</a>
+            </li>
+            <li>
+                <a href="HTML/_Calculator.html">Calculator_win10.ver</a>
             </li>
         </ul>
     </main>

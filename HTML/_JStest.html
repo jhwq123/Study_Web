@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #first {
+            width: 100px;
+            height: 100px;
+            background-color: bisque;
+        }
+        #second {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background-color: grey;
+            
+        }
+        #x {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="first"></div>
+        <div id="second">
+            <div id="x">X</div>
+        </div>
+    </div>
+</body>
+<script>
+    var btn = document.getElementById('first');
+    var popPage = document.getElementById('second');
+    var x = document.getElementById('x');
+    popPage.setAttribute('style', 'display: none');
+
+    btn.addEventListener('click', openPop);
+    x.addEventListener('click', hidePop);
+
+    function openPop() {
+        popPage.style.display = 'block';
+    }
+
+    function hidePop() {
+        popPage.style.display = 'none';
+    }
+</script>
+</html>
