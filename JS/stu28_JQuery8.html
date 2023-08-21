@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.0.js"></script>
+    <style>
+        .blue {
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="apple">apple</h1>
+    <h1 id="banana">banana</h1>
+    <h1 id="kiwi">kiwi</h1>
+    <input type="text" id="box" value="empty" />
+</body>
+<script>
+    // - $( ).css( ); - style.color = “red”;
+    // - $( ).attr( ); - set/getAttribute( );
+    // - $( ).html( ); - innerHTML = “<h1>aaa</h1>;
+    // - $( ).text( ); - innerText = “aaa”;
+    // - $( ).val( ); - value = “bbb”;
+
+    /*
+    var apple = document.getElementById("apple");
+    var banana = document.getElementById("banana");
+    var kiwi = document.getElementById("kiwi");
+    var box = document.getElementById("box");
+
+    apple.style.color = "red";
+    banana.setAttribute("class", "blue");
+    apple.innerHTML = "<a href='../index.html'>gooood</a>";
+    kiwi.innerText = "not Kiwi";
+    box.value = "gooood";
+    */
+
+    $("#apple").css("color", "red");
+    $("#banana").attr("class", "blue");
+    $('#kiwi').html("<a href='../index.html'>gooood</a>");
+    $('#banana').text("Im not banana");
+    $('#box').val("gooooooood");
+
+</script>
+</html>

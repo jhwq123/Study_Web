@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { /* 전체 선택자 */
+            color: blue;
+        }
+
+        h1 { /* 태그 선택자 */
+            background-color: rgb(255, 0, 0);
+        }
+
+        h3 {
+            background-color: yellow;
+        }
+
+        .blackFont { /* 클래스 선택자 : 여러개 */
+            color: black;
+        }
+
+        div {
+            width: 10%;
+            height: 10%;
+            background-color: green;
+        }
+
+        p {
+            width: 30%;
+            height: 10%;
+            background-color: gray;
+        }
+        
+        span {
+            background-color: brown;
+        }
+
+        #box1 { /* 아이디 선택자 : 한개 */
+            background-color: aqua;
+        }
+
+        #box2 {
+            background-color: beige;
+        }
+
+        input[type="text"] { /* input에 타입을 줘서 해결한 경우 */
+            background-color: blue;
+        }
+
+        input[type="password"] {
+            background-color: red;
+        }
+
+        input:enabled { /* 사용가능, 불가능 여부에 따라 다르게 가능 */
+            background-color: blue;
+        }
+
+        input:disabled {
+            background-color: red;
+        }
+
+        input:focus { /* 조건을 줘서 역동적으로 보이게 가능 */
+            background-color: orange;
+        }
+
+        /*
+            반응선택자
+            :active - 사용자가 마우스로 클릭한 태그 선택
+            :hover - 사용자가 마우스 커서를 올린 태그 선택
+            :visited - 해당 링크가 실행된 후의 태그 선택
+        */
+        a:link {
+            color: blue;
+        }
+
+        a:visited {
+            color: red;
+        }
+
+        a:hover {
+            color: green;
+        }
+
+        a:active {
+            color: orange;
+        }
+        /* header속성의 h1들 (후손 선택자)*/
+        #header h1 {
+            color: red;
+        }
+
+        /* header속성 아래 h1 (자식 선택자)*/
+        #header > h1 {
+                color: red;
+        }
+
+        /* header속성 아래 div 아래 h1 (자식 선택자)*/
+        #header > div > h1 {
+                color: red;
+        }
+
+         /* tbody라는것을 자동으로 생성해버리기 때문에,
+        제대로 적용되지 않으면 고려해보아야 한다. */
+        table > tbody > tr {
+            color: green;
+        }
+
+        h1+h2 { /* h1 다음에 있는 h2 만 선택 */
+        color: red;
+        }
+
+        h1~h2 { /* h1 다음에 있는 h2 다 선택 */
+            background-color: yellow;
+        }
+
+        body {
+            background-color: olive;
+        }
+
+        p:nth-child(1) {
+            
+        }
+
+        p:nth-child(2) {
+            /* font-size: 100%; */
+            /* font-size: 1.0em; */
+            font-size: 16px;
+            background-color: rgb(25, 108, 166);
+        }
+
+        p:nth-child(3) {
+            /* font-size: 150%; */
+            /* font-size: 1.5em; */
+            font-size: 24px;
+            background-color: rgba(25, 108, 166, 70%);
+        }
+
+        p:nth-child(4) {
+            /* font-size: 200%; */
+            /* font-size: 2.0em; */
+            font-size: 32px;
+            background-color: #2c786c;
+        }
+
+        body {
+            background-color: aliceblue;
+        }
+
+        div {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            border: 5px solid black;
+            padding: 10px;
+            text-align: center;   
+            margin: 10px 0px 30px 50px ;
+        }
+
+        div {
+            height: 30px;
+            border: 1px dotted #d5d5d5;
+        }
+        .a {
+            /* text-transform: uppercase; */
+            /* text-transform: lowercase; */
+            /* text-transform: none; */
+            text-transform: capitalize;
+        }
+        .b {
+            text-align: right;
+        }
+        .c {
+            padding: 5px;
+            text-decoration: underline overline;
+            text-decoration-color: red;
+            text-decoration-style: dotted;
+        }
+        .d {
+            text-indent: 50px;
+        }
+        .e {
+            letter-spacing: 5px;
+        }
+        .f {
+            word-spacing: 20px;
+        }
+        .g {
+            height: 100px;
+            vertical-align: middle;
+        }
+        ul {
+            list-style-type: none;
+        }
+        .box {
+            width: 70px;
+            height: 70px;
+            background-color: aquamarine;
+            margin: 20px;
+        }
+        .box:nth-child(1) {
+            border: none;
+        }
+        .box:nth-child(2) {
+            border: 10px solid black;
+        }
+        .box:nth-child(3) {
+            border: 10px dotted black;
+        }
+        .box:nth-child(4) {
+            border: 10px dashed black;
+        }
+        .box:nth-child(5) {
+            border: 10px double black;
+        }
+        .box:nth-child(6) {
+            border: 10px groove black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 주석입니다 -->
+    <h1 class="blackFont">제목입니다.</h1>
+    <hr>
+    <h3 class="blackFont">소제목입니다.</h3>
+    <div id="box1">
+        <span>내용</span>입니다.
+    </div>
+    <div id="box2">
+        또 다른 내용입니다.
+    </div>
+    <form>
+        <input type="text" name="txt1">
+        <input type="text" name="txt2">
+        <input type="password" name="pw" id="bgRed">
+    </form>
+    <a href="ex01.html">ex01 페이지</a>
+    <a href="test.html">test 페이지</a>
+    <div id="header">
+        <h1 class="title">제목입니다1.</h1>
+        <div id="nav">
+            <h1>Navigation</h1>
+        </div>
+    </div>
+    <div id = section>
+        <h1 class="title">제목입니다2.</h1>
+        <p>블라 블라 블라 블라</p>
+    </div>
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <td>홍길동</td>
+        </tr>
+        <tr>
+            <th>지역</th>
+            <td>조선 한양</td>
+        </tr>
+    </table>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi saepe architecto repudiandae nisi omnis necessitatibus quas, laboriosam ipsa neque atque labore cum maxime. Dolorum veritatis facere magni iure! Laboriosam, at?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi saepe architecto repudiandae nisi omnis necessitatibus quas, laboriosam ipsa neque atque labore cum maxime. Dolorum veritatis facere magni iure! Laboriosam, at?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi saepe architecto repudiandae nisi omnis necessitatibus quas, laboriosam ipsa neque atque labore cum maxime. Dolorum veritatis facere magni iure! Laboriosam, at?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi saepe architecto repudiandae nisi omnis necessitatibus quas, laboriosam ipsa neque atque labore cum maxime. Dolorum veritatis facere magni iure! Laboriosam, at?</p>
+    <div>1</div>
+    <div>2</div>
+    <div class="a">text-TRANSform: capitalize</div>
+    <div class="b">text-align: right</div>
+    <div class="c">text-underline: overline</div>
+    <div class="d">text-indent: 50px</div>
+    <div class="e">letter-spacing: 5px</div>
+    <div class="f">word-spacing: 20px</div>
+    <div class="g">
+        <span>vertical</span>
+        <span>align</span>
+        <span> middle</span>
+    </div>
+    <ul>
+        <li>1111</li>
+        <li>2222</li>
+    </ul>    
+    <div class="box">none</div>
+    <div class="box">solid</div>
+    <div class="box">dotted</div>
+    <div class="box">dashed</div>
+    <div class="box">double</div>
+    <div class="box">groove</div>
+</body>
+</html>

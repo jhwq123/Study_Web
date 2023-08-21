@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviewStar</title>
+    <style>
+        input[type=range]::-webkit-slider-runnable-track {
+            cursor: pointer;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            height: 50px;
+            width: 0px;
+            background-color: black;
+            -webkit-appearance: none;
+        }
+
+        #starBox {
+            position: relative;
+            width: 300px;
+            height: 100px;
+            z-index: 10;
+        }
+
+        #starBg {
+            background-image: url("/img/star.png");
+            width: 300px;
+            height: 100px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        #starRange {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin-top: 25px;
+            width: 99.5%;
+            -webkit-appearance: none;
+            background: linear-gradient(to right, yellow 0%, yellow 50%, #ececec 50%, #ececec 100%);
+            transition: background 450ms ease-in;
+            z-index: -1;
+        }
+
+        #tempBox {
+            display: none;
+            width: 300px;
+            height: 100px;
+            background-color: black;
+            color: white;
+            font-size: 60px;
+        }
+        #starBox2 {
+            width: 300px;
+            height: 100px;
+            border: 2px solid black;
+            text-align: center;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="starBox">
+        <div id="starBg"></div>
+        <input type="range" id="starRange" max="10" min="0" step="1" />
+    </div>
+    <div id="starId">별점: </div>
+    <div id="tempBox">★★★★★</div>
+    <div id="starBox2">
+        <img src="../img/starOff.png" width="80px" id="star1" >
+        <img src="../img/starOff.png" width="80px" id="star2" >
+        <img src="../img/starOff.png" width="80px" id="star3" >
+    </div>
+    <div id="score">별점:</div>
+</body>
+<script>
+    var starRange = document.querySelector("#starRange");
+    starRange.addEventListener('input', getReview);
+    function getReview(event) {
+        var value = 10;
+        event.target.style.background = 'linear-gradient(to right, yellow 0%, yellow '+value * event.target.value +'%, rgb(236, 236, 236) ' +value *  event.target.value + '%, rgb(236, 236, 236) 100%)';
+        var reviewStarValue = event.target.value * 0.5;
+        document.querySelector("#starId").innerHTML ="별점: "+reviewStarValue;
+    }
+
+    var star1 = document.querySelector("#star1");
+    var star2 = document.querySelector("#star2");
+    var star3 = document.querySelector("#star3");
+    var div_score = document.querySelector("#score");
+    var score = 0;
+    var starBox2 = document.querySelector("#starBox2");
+    starBox2.addEventListener("click", getReview2);
+    function getReview2(event) {
+        if(event.target.tagName != "IMG") return;
+        if(event.target.id == "star1") {
+            score = 1;
+            star1.setAttribute("src", "../img/starOn.png");
+            star2.setAttribute("src", "../img/starOff.png");
+            star3.setAttribute("src", "../img/starOff.png");
+        } else if (event.target.id == "star2") {
+            score = 2;
+            star1.setAttribute("src", "../img/starOn.png");
+            star2.setAttribute("src", "../img/starOn.png");
+            star3.setAttribute("src", "../img/starOff.png");
+        } else if (event.target.id == "star3") {
+            score = 3;
+            star1.setAttribute("src", "../img/starOn.png");
+            star2.setAttribute("src", "../img/starOn.png");
+            star3.setAttribute("src", "../img/starOn.png");
+        }
+        div_score.innerHTML="별점: "+score;
+    }
+</script>
+</html>

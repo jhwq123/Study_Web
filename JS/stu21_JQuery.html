@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 실행 시 시행하는 코드
+        });
+    </script>
+</head>
+<body>
+    <h1>text</h1>
+    <h1>text</h1>
+    <h1>text</h1>
+
+    <script>
+        var h1 = document.getElementsByTagName("h1");
+        // h1.style.color="red";
+        // h1.style.background="black";
+        for(var i = 0; i < h1.length; i++) {
+            h1[i].style.color="red";
+            h1[i].style.background="black";
+        }
+        $("h1").css('color', 'blue');
+        $("h1").css('background', 'yellow');
+    </script>
+</body>
+<!-- <script
+  src="https://code.jquery.com/jquery-3.7.0.js"
+  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+  crossorigin="anonymous">
+</script> -->
+</html>

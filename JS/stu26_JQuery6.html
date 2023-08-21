@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.0.js"></script>
+</head>
+<body>
+    <img src="/img/bb/bb1.jpg" width="200" />
+    <button id="btn1">Click</button>
+    <button id="btn2">Click</button>
+    <button id="btn3">Click</button>
+
+    <script>
+        var flag = 0;
+        $('#btn1').click(function() {
+            alert('클릭!');
+        });
+        $('#btn2').click(function() {
+            $('#btn2').text("ㅎㅇ");
+            $('img').attr("src", "/img/bb/bb2.jpg")
+        })
+        $('#btn3').click(function() {
+            if(flag == 1) {
+                $('img').attr("src", "/img/bb/bb3.jpg")
+                flag = 0;
+            } else {
+                $('img').attr("src", "/img/bb/bb4.jpg")
+                flag = 1;
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.0.js"></script>
+</head>
+<body>
+    <input type="checkbox" id="hobby" value="운동" />운동
+    <button>확인용</button><br>
+    <div></div>
+</body>
+<script>
+    $("button").on('click', function (){
+        if( $("#hobby").prop("checked")) {
+            $('div').html('<h1>Checked!</h1>');
+            $("#hobby").prop("checked", false);
+        } else {
+            $('div').html('<h1>none.</h1>');  
+            $("#hobby").prop("checked", true);
+        }
+    });
+</script>
+</html>

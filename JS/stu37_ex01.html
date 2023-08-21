@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="f('aaaaa')">run</button>
+    <button id="btn2" onclick="f2(f1, 'coca')">run</button>
+    <hr>
+    <p id="demo"></p>
+</body>
+<script>
+    function f(str) {
+        alert("f() run"+str);
+    }
+    function f1(str) {
+        document.querySelector("#demo");
+        innerHTML = str;
+    }
+    function f2(func, s) {
+        func(s);
+    }
+    var list = [];
+    var str = "";
+    
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(resp => resp.json())
+        .then(function(data) {
+            for(var i = 0; i < 100; i++) {
+                var db = {
+                    userId : data[i].userId,
+                    id : data[i].id,
+                    title : data[i].title,
+                    body : data[i].body
+                };
+                str += "<h1>userId: "+db.userId+"</h1><h2>id: "+db.id+"</h2><h3>title: "+db.title+"</h3><h4>body: "+db.body+"</h4><hr>";
+                list.push(db);
+
+            }
+            return data;
+        })
+        .then(value => document.getElementById("demo").innerHTML = str);
+    
+    function fu() {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(resp => resp.json())
+        .then(function(data) {
+            for(var i = 0; i < 100; i++) {
+                var db = {
+                    userId : data[i].userId,
+                    id : data[i].id,
+                    title : data[i].title,
+                    body : data[i].body
+                };
+                str += "<h1>userId: "+db.userId+"</h1><h2>id: "+db.id+"</h2><h3>title: "+db.title+"</h3><h4>body: "+db.body+"</h4><hr>";
+                list.push(db);
+
+            }
+            return data;
+        })
+        .then(value => document.getElementById("demo").innerHTML = str);
+    }
+
+</script>
+</html>

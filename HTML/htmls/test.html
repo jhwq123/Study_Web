@@ -1,0 +1,227 @@
+<HTML>
+	<head>
+		<title>핑크색 머리띠</title>
+	</head>
+	<body>
+		<header>머리</header>
+		<main>
+			하나둘
+			<!-- 문단, block tag -->
+			<p> 처음 만드는 html 일까 아닐까 </p>
+			<!-- 구분짓는 박스 -->
+			<div> 공간빡스 </div>
+			<div> 공간빡스2 </div>
+			<!-- 줄바꿈 -->
+			<br/>
+			<!-- border -->
+			<div><b> 제목태그 </b></div>
+			<!-- heading -->
+			<h1> h1입니다.(200%) </h1>
+			<h2> h2입니다.(150%) </h2>
+			<h3> h3입니다.(120%) </h3>
+			<h4> h4입니다.(100%) </h4>
+			<h5> h5입니다.(80%) </h5>
+			<h6> h6입니다.(70%) </h6>
+			<!-- pre -->
+			<pre>
+				이녀석은
+				입력한 내용을
+				그대로
+				<b> 표 </b>
+				<b> 시 </b>
+				합니다.
+			</pre>
+			<h2> 문자모양 태그들 </h2>
+			<p>
+				<b> b태그입니다 </b><br/>
+				<i> i태그입니다 </i><br/>
+				<em> em태그입니다 </em><br/>
+				<small> small태그입니다 big은 없습니다 </small><br/>
+				<mark> mark태그입니다 </mark><br/>
+				<strong> strong태그입니다 </strong><br/>
+				sup태그는.윗<sub> 첨 </sub>자와 아랫<sup> 첨 </sup>자가 있습니다.<br/>
+				<ins> ins태그입니다 </ins><br/>
+				<del> del태그입니다 </del>
+			</p>
+			<h2> 특수문자 표기 </h2>
+			<p>
+				<div> !space &nbsp;: &nbsp; (공백) </div>
+				<div> !less than : &lt; </div>
+				<div> !greater than : &gt; </div>
+				<div> ampersand : &amp; </div>
+				<div> cent : &cent; </div>
+				<div> pound : &pound; </div>
+				<div> yen : &yen; </div>
+				<div> euro : &euro; </div>
+				<div> section : &sect; </div>
+				<div> !copyright : &copy; </div>
+				<div> registerd trademark : &reg; </div>
+			</p>
+			<h2> 공간 분할 태그 </h2>
+			<p><div>div 태그</div>는 블럭 태그입니다</p>
+			<p><span>span 태그</span>는 인라인 태그입니다</p>
+			<div style="border: 1px dotted red; background-color: gray">
+				<h3>백두산 호랑이</h3>
+				<hr>
+				높은 산의 숲이 우거진 곳에서 사는 고양잇과의 포유류로
+				<span style="color: white; background-color: tomato; font-weight: bold">
+					한국 호랑이
+				</span>
+				라고도 한다.
+			</div>
+			<h2>이미지 표시하기</h2>
+			<figure>
+				<img src = "sample.png" alt = "승부다창">
+				<figcaption>[pic1-승부다창]</figcaption>
+				<img src = "cat.gif" alt = "thumbCat" width = 200>
+				<figcaption>[pic2-춤추는고양이]</figcaption>
+				<img src = "kermit.gif" alt = "ketmit" width = 200>
+				<figcaption>[pic3-커밋]</figcaption>
+			</figure>
+			<h2>목록 표시하기</h2>
+			<h3>비순차적 목록(Unordered List)</h3>
+			<hr>
+			<ul>
+				<li>Cafe latte</li>
+				<li>Americano</li>
+				<li>Espresso</li>
+			</ul>
+			<h3>순차적 목록(Ordered List)</h3>
+			<hr>
+			<ol type="A" start = "10" reversed>
+				<li>밥을 먹는다</li>
+				<li>후식을 먹는다</li>
+				<li>잠을 잔다</li>
+			</ol>
+			<h2> 링크 걸기 </h2>
+			<h3> 링크 걸기 a (anchor 태그) </h3>
+			<hr>
+			<a href = "https://www.w3schools.com" target="_blank">
+				스쿨버스~
+			</a>
+			<br/>
+			<a href = "https://www.naver.com">
+				바뀐 네이버
+			</a>
+			<br/>
+			<a href = "test2.html">
+				test2 파일로 가보자
+			</a>
+			<h3> 링크 걸기 
+			<h1> 테이블 만들기 </h1>
+			<hr>
+			<table border='1'> <!-- 행과 열 -->
+				<thead style = "background-color: gray; color: white">
+					<tr>
+						<th>책제목</th>
+						<th>지은이</th>
+						<th>출판사</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>입 속의 검은 잎</td>
+						<td>기형도</td>
+						<td>문학과 지성자</td>
+					</tr>
+					<tr>
+						<td>서른, 잔치는 끝났다</td>
+						<td>최영미</td>
+						<td>창작과 비평사</td>
+					</tr>
+					<tr>
+						<td>은어낚시통신</td>
+						<td>윤대녕</td>
+						<td>문학동네</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>
+			<table border='1'>
+				<tr>
+					<td>1행 1열</td>
+					<td>1행 2열</td>
+					<td>1행 3열</td>
+				</tr>
+				<tr>
+					<td colspan="3">2행 1열</td>
+				</tr>
+			</table>
+			<hr>
+			<table border='1'>
+				<tr>
+					<td rowspan = "2" style = "background-color: red">1행 1열</td>
+					<td style = "background-color: yellow">1행 2열</td>
+					<td style = "background-color: purple">1행 3열</td>
+				</tr>
+				<tr>
+					<td colspan = "2" style = "background-color: green">2행 1열</td>
+				</tr>
+				<tr>
+					<td colspan = "2" style = "background-color: orange">3행 1열</td>
+					<td style = "background-color: blue">3행 2열</td>
+				</tr>
+			</table>
+			<hr>
+			<table border='1'>
+				<tr>
+					<td colspan = "4">지상파 방송국</td>
+				</tr>
+				<tr>
+					<td rowspan = "2">채널</td>
+					<td>MBC</td>
+					<td>KBS</td>
+					<td>SBS</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>9</td>
+					<td>5</td>
+				</tr>
+			</table>
+			<hr>
+			<h2> 폼 요소들 </h2>
+			<form action = "test2.html">
+				<input type = "text" name = "txt_name" placeholder = "이름을 입력하십쇼">
+				<br><br>
+				<input type = "text" name = "txt_tel" placeholder = "전화번호을 입력하십쇼">
+				<br><br>
+				<input type = "password" placeholder = "비밀번호쓰시오">
+				<br><br>
+				<input type = "radio" name = "group" value = "A" checked> A그룹
+				<input type = "radio" name = "group" value = "B"> B그룹
+				<br><br>
+				<input type = "checkbox" name = "favorite_fruit" value = "apple">사과
+				<input type = "checkbox" name = "favorite_fruit" value = "banana">바나나
+				<input type = "checkbox" name = "favorite_fruit" value = "grape">포도
+				<input type = "reset" value="초기화">
+				<input type = "submit" value="등록">
+				<br><br>
+				<input type = "image" src="button.jpg" width="100" height="100" alt="Submit">
+			</form>
+			<hr>
+			<form action = "dance.html">
+				<input type = "text" name = "id" placeholder = "아이디를 입력하세요">
+				<br><br>
+				<input type = "password" placeholder = "비밀번호를 입력하세요">
+				<br><br>
+				<input type = "text" name = "name" placeholder = "이름을 입력하세요">
+				<br><br>
+				<span>성별</span>
+				<input type = "radio" name = "gender" value = "M" checked> 남자
+				<input type = "radio" name = "gender" value = "W" > 여자
+				<br><br>
+				<span>취미</span>
+				<input type = "checkbox" name = "habit" value = "game"> 게임하기
+				<input type = "checkbox" name = "habit" value = "walk"> 산책하기
+				<input type = "checkbox" name = "habit" value = "study"> 공부하기
+				<input type = "checkbox" name = "habit" value = "sleep"> 잠자기
+				<br><br>
+				<input type = "image" src="button.jpg" width="300" height="300" alt="Submit">
+				<br>
+				<span>[마음에 들었다면 단추의 코를 눌러주세요]</span>
+			</form>
+		</main>
+		<footer>다리</footer>
+	</body>
+</HTML>

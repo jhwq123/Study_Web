@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+<style>
+    @font-face {
+    font-family: 'Gugi';
+    src: url('font/Gugi-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    section {
+		width: 600px;
+		height: 700px;
+		background-color: #f0d78c;
+		border: 10px solid black;
+		border-style: ridge; 
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+    .sBoard {
+        width: 100px;
+        height: 180px;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 348px;
+    }
+    .sGrid {
+        width: 80px;
+        height: 121px;
+        border: 2px solid black;
+        background-color: black;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-gap: 2px;
+    }
+    .sText {
+        font-family: 'Gugi';
+    }
+
+    #gameBoard {
+        width: 280px;
+        height: 562px;
+        border: 10px solid black;
+        margin-top: 50px;
+        display: grid;
+        background-color: black;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(20, 1fr);
+        grid-gap: 2px;
+    }
+
+    .block {
+        background-color: rgba(255, 255 ,255, 0.2);
+    }
+
+    .blockI {
+        background-color: #00bbf0; 
+        border: 5px solid rgba(0, 0, 0, 0.3);
+        border-style: outset;
+    }
+
+    .blockO {
+        background-color: #ffc93c; 
+        border: 5px solid rgba(0, 0, 0, 0.3);
+        border-style: outset;
+    }
+
+    .blockZ {
+        background-color: #d63447; 
+        border: 5px solid rgba(0, 0, 0, 0.3);
+        border-style: outset;
+    }
+
+    .blockS {
+        background-color: #a1dd70; 
+        border: 5px solid rgba(0, 0, 0, 0.3);
+        border-style: outset;
+    }
+
+    .blockJ {
+        background-color: #005792; 
+        border: 5px solid rgba(0, 0, 0, 0.3);
+        border-style: outset;
+    }
+
+    .blockL {
+        background-color: #ff9a3c; 
+        border: 5px solid rgba(0, 0, 0, 0.3);
+        border-style: outset;
+    }
+
+    .blockT {
+        background-color: #8a1253; 
+        border: 5px solid rgba(0, 0, 0, 0.3);
+        border-style: outset;
+    }
+
+</style>
+</head>
+<body>
+    <section>
+        <div class="sBoard" id="saveBoard">
+            <div class="sGrid" id="saveGrid">
+
+            </div>
+            <span class="sText">SAVE</span>
+        </div>
+
+        <div id="gameBoard">
+            
+        </div>
+        <div class="sBoard" id="nextBoard">
+            <div class="sGrid" id="nextGrid">
+
+            </div>
+            <span class="sText">NEXT</span>
+        </div>
+    </section>
+</body>
+<script>
+    var saveGrid = document.querySelector("#saveGrid");
+    var nextGrid = document.querySelector("#nextGrid");
+    var gameGrid = document.querySelector("#gameBoard");
+
+    // small div
+    for(var i = 0; i < 4; i++) {
+        for (var j = 0; j < 6; j++) {
+            var box = document.createElement("div");
+            var box2 = document.createElement("div");
+            box.className = "block";
+            box2.className = "block";
+            box.id = "sbox"+i+"_"+j;
+            box2.id = "nbox"+i+"_"+j;
+            box.setAttribute("style", "grid-column: "+(i+1)+" / span 1; grid-row: "+(j+1)+" / span 1");
+            box2.setAttribute("style", "grid-column: "+(i+1)+" / span 1; grid-row: "+(j+1)+" / span 1");
+            saveGrid.appendChild(box);
+            nextGrid.appendChild(box2);
+            
+        }
+    }
+
+    // big div
+    for(var i = 0; i < 10; i++) {
+        for (var j = 0; j < 20; j++) {
+            var box3 = document.createElement("div");
+            box3.className = "block";
+            box3.id = "gbox"+i+"_"+j;
+            box3.setAttribute("style", "grid-column: "+(i+1)+" / span 1; grid-row: "+(j+1)+" / span 1");
+            gameGrid.appendChild(box3);
+        }
+    }
+
+    // save에 T블럭 넣기
+    document.getElementById("sbox1_1").className = "blockT";
+    document.getElementById("sbox1_2").className = "blockT";
+    document.getElementById("sbox1_3").className = "blockT";
+    document.getElementById("sbox2_2").className = "blockT";
+
+    // next에 I블럭 넣기
+    document.getElementById("nbox1_1").className = "blockI";
+    document.getElementById("nbox1_2").className = "blockI";
+    document.getElementById("nbox1_3").className = "blockI";
+    document.getElementById("nbox1_4").className = "blockI";
+    
+    // J블럭 넣기
+    document.getElementById("gbox0_19").className = "blockJ";
+    document.getElementById("gbox1_19").className = "blockJ";
+    document.getElementById("gbox2_19").className = "blockJ";
+    document.getElementById("gbox0_18").className = "blockJ";
+
+    // T블럭 넣기
+    document.getElementById("gbox3_19").className = "blockT";
+    document.getElementById("gbox2_18").className = "blockT";
+    document.getElementById("gbox3_18").className = "blockT";
+    document.getElementById("gbox4_18").className = "blockT";
+
+    // L블럭 넣기
+    document.getElementById("gbox4_19").className = "blockL";
+    document.getElementById("gbox5_17").className = "blockL";
+    document.getElementById("gbox5_18").className = "blockL";
+    document.getElementById("gbox5_19").className = "blockL";
+
+    // O블럭 넣기
+    document.getElementById("gbox6_18").className = "blockO";
+    document.getElementById("gbox7_18").className = "blockO";
+    document.getElementById("gbox6_19").className = "blockO";
+    document.getElementById("gbox7_19").className = "blockO";
+
+    // I블럭 넣기
+    document.getElementById("gbox8_16").className = "blockI";
+    document.getElementById("gbox8_17").className = "blockI";
+    document.getElementById("gbox8_18").className = "blockI";
+    document.getElementById("gbox8_19").className = "blockI";
+
+</script>
+</html>

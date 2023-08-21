@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/JS/jquery-3.7.0.js"></script>
+<style>
+
+	@font-face {
+    font-family: 'Gugi';
+    src: url('font/Gugi-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+	}
+	
+	@font-face {
+    font-family: 'Caveat';
+    src: url('font/Caveat-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+	body {
+		/* 컨텐츠 중앙 정렬 필요 */
+		margin: 0;
+		padding: 0;
+		height: 100%;
+	}
+	
+	main {
+		width: 100%;
+		height:	95vh;
+		display: flex;
+		position: relative;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	section {
+		background-image: url("img/bg/cat.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		width: 600px;
+		height: 700px;
+		background-color: #f0d78c;
+		border: 10px solid black;
+		border-style: ridge; 
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	
+	#score {
+		width: 75%;
+		height: 50px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 40px;
+	}
+	
+	.scoreE {
+		font-size: 50px;
+		font-weight: 500;
+		font-family: 'Gugi';
+	}
+	
+	#gamePallet {
+		width: 580px;
+		height: 400px;
+		border: 2px solid black;
+		background-color: black;
+	}
+	
+    /* gameBox */
+    .mainBox {
+        position: relative;
+	    width: 520px;
+	    height: 340px;
+	    padding: 10px 20px 10px 0px;
+	    border: 20px ridge rgba(132, 132, 173, 0.6);
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: space-evenly;
+	    align-items: left;
+        overFlow: hidden;
+	}
+
+    .invert {
+        filter: invert(100%);
+        transition: all 2s;
+    }
+
+    #bgBox {
+        position: absolute;
+        width: 4000px;
+	    height: 360px;
+        background-color: #7f7e83;
+		top: 0px;
+        z-index: 1;
+        overFlow: hidden;
+    }
+
+    .bg {
+        position: relative;
+        display: inline-block;
+        width: 540px;
+	    height: 360px;
+        z-index: 1;
+    }
+
+    #bg1 {
+        /* background-color: red; */
+        background-image: url("./img/runMonkey/bg2.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+    }
+
+    #bg2 {
+        /* background-color: orange; */
+        background-image: url("./img/runMonkey/bg2.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+    }
+
+    #bg3 {
+        /* background-color: blue; */
+        background-image: url("./img/runMonkey/bg2.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+    }
+
+    #bg4 {
+        /* background-color: green; */
+        background-image: url("./img/runMonkey/bg2.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+    }
+
+    #bg5 {
+        /* background-color: pink; */
+        background-image: url("./img/runMonkey/bg2.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+    }
+
+    #bg6 {
+        /* background-color: purple; */
+        background-image: url("./img/runMonkey/bg2.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+    }
+
+    #monkey {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 50px;
+        bottom: 45px;
+		background-position: center;
+		background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 5;
+    }
+
+    .monkey1 {
+        background-image: url("/img/runMonkey/m2.png");
+    }
+
+    .monkey2 {
+        background-image: url("/img/runMonkey/m3.png");
+    }
+
+    .monkey3 {
+        background-image: url("/img/runMonkey/m1.png");
+    }
+
+    .monkey4 {
+        background-image: url("/img/runMonkey/m4.png");
+    }
+
+    .cloud {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 0px;
+        background-image: url("/img/runMonkey/cloud2.png");
+		background-position: center;
+		background-repeat: no-repeat;
+        z-index: 2;
+    }
+
+    #cloud1 {
+        right: 0px;
+    }
+
+    #cloud2 {
+        right: 0px;
+    }
+
+    #cloud3 {
+        right: 0px;
+    }
+
+    #cloud4 {
+        right: 0px;
+    }
+
+    #cloud5 {
+        right: 0px;
+    }
+
+    .obj {
+        background-color: none;
+    }
+
+    #obj1 {
+        background-image: url("./img/runMonkey/obj11.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+        position: absolute;
+        width: 62px;
+        height: 67px;
+        right: -99px;
+        bottom: 49px;
+        z-index: 4;
+    }
+
+    #obj2 {
+        background-image: url("./img/runMonkey/obj22.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+        position: absolute;
+        width: 78px;
+        height: 78px;
+        right: 0px;
+        bottom: 49px;
+        z-index: 4;
+    }
+
+    #obj3 {
+        background-image: url("./img/runMonkey/obj33.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+        position: absolute;
+        width: 66px;
+        height: 79px;
+        right: 0px;
+        bottom: 49px;
+        z-index: 4;
+    }
+
+    #obj4 {
+        background-image: url("./img/runMonkey/obj44.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+        position: absolute;
+        width: 43px;
+        height: 88px;
+        right: 0px;
+        bottom: 49px;
+        z-index: 4;
+    }
+
+    #obj5 {
+        background-image: url("./img/runMonkey/obj55.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+        position: absolute;
+        width: 58px;
+        height: 96px;
+        right: 0px;
+        bottom: 49px;
+        z-index: 4;
+    }
+
+    #obj6 {
+        background-image: url("./img/runMonkey/obj66.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+        position: absolute;
+        width: 72px;
+        height: 90px;
+        right: 0px;
+        bottom: 49px;
+        z-index: 4;
+    }
+
+    #obj7 {
+        background-image: url("./img/runMonkey/obj77.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+        position: absolute;
+        width: 43px;
+        height: 90px;
+        right: 0px;
+        bottom: 49px;
+        z-index: 4;
+    }
+
+    #obj8 {
+        background-image: url("./img/runMonkey/obj88.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+        position: absolute;
+        width: 44px;
+        height: 90px;
+        right: 0px;
+        bottom: 49px;
+        z-index: 4;
+    }
+
+    #obj9 {
+        background-image: url("./img/runMonkey/obj99.png");
+		background-position: bottom;
+		background-repeat: no-repeat;
+        position: absolute;
+        width: 45px;
+        height: 89px;
+        right: 0px;
+        bottom: 49px;
+        z-index: 4;
+    }
+
+    .test {
+        /* background-color: purple; */
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        z-index: 10;
+    }
+
+    #scoreBox {
+        position: absolute;
+        width: 120px;
+        height: 30px;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+        font-size: 32px;
+    }
+
+
+</style>
+</head>
+<body>
+	<main>
+		<section>
+			<div id="score">
+				<span class="scoreE" id="scoreNum">score</span>
+				<span class="scoreE" id="scoreHigh">high</span>
+			</div>
+			<div id="gamePallet">
+				<div class="mainBox">
+                    <div id="scoreBox">
+                        <span id="value">00000</span>
+                    </div>
+                    <div id="bgBox">
+                        <!-- 여기에 배경이 들어감 -->
+                    </div>
+                    <div id="monkey"></div>
+                    <div id="cloud1" class="cloud"></div>
+                </div>
+			</div>
+            <!-- test -->
+            <div id="test1" class="test"></div>
+            <div id="test2" class="test"></div>
+            <div id="test3" class="test"></div>
+            <div id="test4" class="test"></div>
+		</section>
+	</main>
+</body>
+<script>
+    var timeCnt = 0;
+    var jumpTimer;
+    var imgCnt = 0;
+    var bgCnt = 1;
+    var cloudCnt = 1;
+    var jumpFlag = 0;
+    var score = 100000;
+    var speed;
+    var gameSpeed = 100; //
+    var bgSpeed = 10; //
+    var speedFlag = 0;
+
+    var bgBox = document.getElementById("bgBox");
+    for(var i = 1; i < 7; i++) {
+        var initBg = document.createElement("div");
+        initBg.setAttribute("id", "bg"+i);
+        initBg.setAttribute("class", "bg");
+        bgBox.appendChild(initBg);
+    }
+
+    var timer = setInterval(f, gameSpeed);
+    var bgTimer = setInterval(goBg, bgSpeed);
+    
+
+    $(".mainBox").on('click', function() {
+        if(jumpFlag == 0) {
+            jumpFlag = 1;
+            speed = 13;
+        }
+    });
+
+    function f() {
+        if(imgCnt == 0) {
+            $("#monkey").attr("class", "monkey1");
+            imgCnt = 1;
+        } else {
+            $("#monkey").attr("class", "monkey2");
+            imgCnt = 0;
+        }
+        if(jumpFlag == 1) {
+            jumpTimer = setInterval(jump, 10);
+            jumpFlag = 2;
+        }
+        timeCnt++;
+        goCloud();
+        if(timeCnt >= 100) {
+            addCloud();
+            timeCnt = 0;
+        }
+
+        // 스코어 추가
+        score++;
+        score = score;
+        var strS = score+"";
+        var str = strS.substring(1, 6);
+        $("#value").html(str);
+        
+        if(score >= 101000 && speedFlag <= 3) {
+            console.log("done4");
+            speedFlag++;
+            gameSpeed = 20;
+            bgSpeed = 2;
+            clearInterval(timer);
+            clearInterval(bgTimer);
+            timer = setInterval(f, gameSpeed);
+            bgTimer = setInterval(goBg, bgSpeed);
+        } else if (score >= 100800 && speedFlag <= 2) {
+            console.log("done3");
+            speedFlag++;
+            gameSpeed = 40;
+            bgSpeed = 4;
+            clearInterval(timer);
+            clearInterval(bgTimer);
+            timer = setInterval(f, gameSpeed);
+            bgTimer = setInterval(goBg, bgSpeed);
+        } else if (score >= 100500 && speedFlag <= 1) {
+            console.log("done2");
+            speedFlag++;
+            gameSpeed = 60;
+            bgSpeed = 6;
+            clearInterval(timer);
+            clearInterval(bgTimer);
+            timer = setInterval(f, gameSpeed);
+            bgTimer = setInterval(goBg, bgSpeed);
+        } else if (score >= 100200 && speedFlag <= 0) {
+            console.log("done1");
+            speedFlag++;
+            gameSpeed = 80;
+            bgSpeed = 8;
+            clearInterval(timer);
+            clearInterval(bgTimer);
+            timer = setInterval(f, gameSpeed);
+            bgTimer = setInterval(goBg, bgSpeed);
+            $(".mainBox").addClass("invert");
+        }
+    }
+
+    
+    function jump() {
+        var pastS = $("#monkey").css("bottom");
+        var past = parseInt(pastS);
+        var result = past+speed;
+        if(result >= 45) {
+            
+            // test
+            var t1 = parseInt($("#test1").css("top"));
+            var t2 = parseInt($("#test2").css("top"));
+            var t3 = parseInt($("#test3").css("top"));
+            var t4 = parseInt($("#test4").css("top"));
+            // console.log(t1+"/"+t2+"/"+t3+"/"+t4);
+            $("#test1").css("top", 670-result+"px");
+            $("#test2").css("top", 670-result+"px");
+            $("#test3").css("top", 670-result+"px");
+            $("#test4").css("top", 670-result+"px");
+
+            $("#monkey").attr("class", "monkey3");
+            $("#monkey").css("bottom", result+"px");
+            speed = speed - (0.98/2);
+        } else {
+            $("#monkey").css("bottom", "45px");
+            jumpFlag = 0;
+            clearInterval(jumpTimer);
+        }
+    }
+
+    function goCloud() {
+        for(var i = 0; i < 6; i++) {
+            var valueS = $("#cloud"+i).css("right");
+            var value = parseInt(valueS)+1;
+            if(valueS != NaN) {
+                $("#cloud"+i).css("right", value+"px");
+            }
+            
+        }
+    }
+
+    function addCloud() {
+        var y = parseInt(Math.random()*4); // 0~3
+        cloudY = y*50;
+        $("#cloud"+(cloudCnt+1)).remove();
+        $(".mainBox").append('<div id="cloud'+(cloudCnt+1)+'" class="cloud"></div>');
+        $("#cloud"+(cloudCnt+1)).css("top", cloudY+"px");
+        cloudCnt++;
+        if(cloudCnt >= 5) {
+            cloudCnt = 0;
+        }
+    }
+    
+    // 화면을 붙여넣고 계속 땡겨줄 수 있나?
+    function goBg() {
+        for(var i = 1; i < 7; i++) {
+            var bgvalueS = $("#bg"+i).css("left");
+            var bgvalue = parseInt(bgvalueS)-3;
+            $("#bg"+i).css("left", bgvalue+"px");
+        }    
+        if((bgvalue*(-1))%1998 == 0) {
+            console.log("bgCnt:"+bgCnt);
+            if(bgCnt >= 7) {
+                bgCnt = 1;
+            }
+            $("#bg"+bgCnt).remove();
+            var newBG = document.createElement("div");
+            newBG.setAttribute("id", "bg"+bgCnt);
+            newBG.setAttribute("class", "bg");
+            $("#bgBox").append(newBG);
+            bgvalue += 540;
+            for(var i = 1; i < 7; i++) {
+                $("#bg"+i).css("left", bgvalue+"px");
+            }
+            bgCnt++;
+        }
+        goObj(bgvalue);
+
+        // test
+        var boxX = document.querySelector(".mainBox").getBoundingClientRect().left;
+        var boxY = document.querySelector(".mainBox").getBoundingClientRect().top;
+
+        var eX = boxX+94;
+        var eY = boxY+310;
+        var rx1 = eX+21;
+        var ry1 = eY-8;
+        var rx2 = eX+10;
+        var ry2 = eY+14;
+        var rx3 = eX;
+        var ry3 = eY+20;
+        var rx4 = eX-13;
+        var ry4 = eY+17;
+
+        // var test = document.elementFromPoint 
+        var el1 = document.elementsFromPoint(rx1, ry1)[2].id;
+        var el2 = document.elementsFromPoint(rx2, ry2)[2].id;
+        var el3 = document.elementsFromPoint(rx3, ry3)[2].id;
+        var el4 = document.elementsFromPoint(rx4, ry4)[2].id;
+
+        // console.log(el1+"/"+el2+"/"+el3+"/"+el4)
+        $("#test1").css("left", rx1+"px");
+        $("#test1").css("top", ry1+"px");
+        $("#test2").css("left", rx2+"px");
+        $("#test2").css("top", ry2+"px");
+        $("#test3").css("left", rx3+"px");
+        $("#test3").css("top", ry3+"px");
+        $("#test4").css("left", rx4+"px");
+        $("#test4").css("top", ry4+"px");
+        // console.log(element0+"/"+element1+"/"+element2);
+        // 2가 object다.
+        // 피격 좌표 설정 (boxX+94 / boxY+310) 기준
+        // 1. (eX+21 / eY-8) / element1
+        // 2. (eX+10 / eY+14) / element1
+        // 3. (eX / eY+20) / element1
+        // 4. (eX-13 / eY+17) / element1
+        if(el1.substring(0, 3) == "obj" || el2.substring(0, 3) == "obj" || el3.substring(0, 3) == "obj" || el4.substring(0, 3) == "obj") {
+            console.log("장애물 잡았음.");
+            $("#monkey").attr("class", "monkey4");
+            clearInterval(timer);
+            clearInterval(bgTimer);
+            clearInterval(jumpTimer);
+        }
+    }
+
+    var objX = 300;
+    var idx = 0;
+    function goObj() {
+        if(objX == 0) {
+            var newObj = document.createElement("div");
+            idx = parseInt(Math.random()*9)+1;
+            newObj.setAttribute("id", "obj"+idx);
+            newObj.setAttribute("class", "obj");
+            $(".mainBox").append(newObj);
+            console.log("make done, idx:"+idx);
+            objX = 0;
+        } else {
+            objX--;
+        }
+        if($(".obj")[0] != null) {
+            $("#obj"+idx).css("right", objX+"px");
+            objX = objX + 4;
+            if(parseInt($("#obj"+idx).css("right")) > 580) {
+                $("#obj"+idx).remove();
+                // 랜덤한 시간
+                // 51~402 정도 텀 주기 17 134
+                objX = (parseInt(Math.random()*117)+17)*3;
+                idx = 0;
+            }
+        }
+    }
+
+</script>
+</html>

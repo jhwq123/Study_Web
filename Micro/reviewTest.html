@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .review {
+        width: 500px;
+        height: auto;
+        margin: 10px 0px;
+    }
+    span {
+        display: inline-block;
+        width: 300px;
+        height: auto;
+        border: 3px solid black;
+        font-size: 20px;
+    }
+    button {
+        width: 80px;
+        height: auto;
+    }
+
+</style>
+<body>
+    <h1>무한 댓글 연습용</h1>
+    <ul class="review" id="d">
+        <span>댓글: d</span>
+        <button class="ddBtn">댓글달기</button>
+        <ul class="review dd" id="dd1">
+            <span class="ddValue">댓글: dd1</span>
+            <button class="ddBtn">댓글달기</button>
+        </ul>
+        <ul class="review dd" id="dd2">
+            <span class="ddValue">댓글: dd2</span>
+            <button class="ddBtn">댓글달기</button>
+            <ul class="review ddd" id="ddd1">
+                <span class="ddValue">댓글: ddd1</span>
+                <button class="ddBtn">댓글달기</button>
+            </ul>    
+            <ul class="review ddd" id="ddd2">
+                <span class="ddValue">댓글: ddd2</span>
+                <button class="ddBtn">댓글달기</button>
+            </ul>    
+            <ul class="review ddd" id="ddd3">
+                <span class="ddValue">댓글: ddd3</span>
+                <button class="ddBtn">댓글달기</button>
+            </ul>
+        </ul>
+        <ul class="review dd" id="dd3">
+            <span class="ddValue">댓글: dd3</span>
+            <button class="ddBtn">댓글달기</button>
+        </ul>
+    </ul>    
+</body>
+<script>
+    reviewBtn = document.getElementById("d");
+
+    reviewBtn.addEventListener("click", f);
+
+   
+
+    function f(event) {
+        var targ = event.target;
+
+        if(targ == "[object HTMLButtonElement]") {
+            var mother = targ.parentElement;
+
+            var idx = mother.id.substr(mother.id.length-1, 1);
+            var idxN = mother.id.substr(0, mother.id.length-1);
+            if(idxN == "") {
+                idxN = "d";
+            }
+            var idxM = mother.children.length-1;
+            console.log("idx: " + idx + " / idxN: " + idxN + " / idxM: " + idxM);
+
+            var review = document.createElement("ul");
+            var text = "댓글: " + idxN + "d" + idxM;
+            review.className = "review "+idxN+"d";
+            review.id = idxN+"d"+idxM;
+            review.innerHTML += "<span class='ddValue'>"+ text+"</span><button class='ddBtn'>댓글달기</button>";
+            
+            targ.parentElement.appendChild(review);
+        }
+    }
+
+</script>
+</html>

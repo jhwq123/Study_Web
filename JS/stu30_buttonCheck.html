@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.0.js"></script>
+</head>
+<body>
+    <div>
+
+    </div>
+    <hr> 
+    <form onclick="f(event)">
+        <input type="button" value="btn1" /><br>
+        <input type="button" value="btn2" /><br>
+        <input type="button" value="btn3" /><br>
+    </form>
+</body>
+<script>
+    $("input").css("width", "200");
+    $("input").css("height", "100");
+    $("input").css("font-size", "40px");
+    $("input").css("margin", "20px 0px");
+
+    function f(event) {
+        var val = event.target.value;
+        if(val == undefined) {
+            val = "none";
+        }
+        if(val.substr(0, 3) == 'btn') {
+            alert(val);
+            $("div").html("<h1>"+val+"</h1>");
+        }
+    }
+
+</Script>
+</html>

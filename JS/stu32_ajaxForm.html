@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.0.js"></script>
+</head>
+<body>
+    <!-- <form action="" method="get">
+        <input type="text" name="id" />
+        <input type="password" name="pw" />
+        <input type="name" name="name" />
+        <input type="phone" name="phone" />
+    </form> -->
+    <hr>
+    <button onclick="f()">test</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>아이디</th>
+                <th>패스워드</th>
+                <th>이름</th>
+                <th>휴대폰</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+<script>
+    function f() {
+        $("tbody").empty();
+        $.ajax({
+            url: "sample2.txt",
+            type: "get",
+            dataType: "text",
+            success: function(resp) {
+                var obj = JSON.parse(resp);
+                for(var i = 0; i < obj.length; i++) {
+                    $("tbody").append(
+                        "<tr>"+
+                        "<td>"+obj[i].id+"</td>"+
+                        "<td>"+obj[i].pw+"</td>"+
+                        "<td>"+obj[i].name+"</td>"+
+                        "<td>"+obj[i].phone+"</td>"+
+                        "</tr>"
+                    );
+                }
+            }
+        });
+    }
+
+</script>
+</html>
